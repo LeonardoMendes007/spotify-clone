@@ -1,0 +1,124 @@
+@import 'variaveis';
+
+.table {
+    width: 100%;
+    max-width: 2000px;
+    text-align: left;
+    table-layout: fixed;
+    border-collapse: separate;
+
+
+    thead {
+        th{
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: $branco-transparent-90;
+        }
+    }
+
+    tbody{
+        th, td {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+    
+        }
+
+        tr{
+            &:hover{
+                cursor: pointer;
+    
+                td{
+                    color: $branco;
+                }
+    
+                .play{
+                    .icon-play{
+                        display: block;
+                    }
+    
+                    span{
+                        display: none;
+                    }
+                }
+                
+            }
+        }
+    }
+   
+
+    tr{
+        td{
+            margin: 5px;
+            font-weight: 500;
+            font-size: 0.8rem;
+            color: $branco-transparent-90;
+            
+        }
+
+        .titulo{
+            display: flex;
+            gap: 15px;
+
+            div {
+                vertical-align: middle;
+                display: flex;
+                flex-direction: column;
+                
+                
+                span{
+                    font-weight: 700;
+                    font-size: 0.9rem;
+                    color: $branco;
+                    margin: 0;
+                    padding: 0;
+                }
+
+                p{
+                    font-weight: 500;
+                    font-size: 0.8rem;
+                    color: $branco-transparent-90;
+                    margin: 5px 0px 0px 0px;
+                    padding: 0;
+
+                    &:hover{
+                        text-decoration: underline;
+                    }
+                }
+
+            }
+        }
+
+        .play{
+
+            text-align: center;
+            .icon-play{
+                color: $branco;
+                font-size: 1.1rem;
+                display: none;
+            }
+
+            span{
+                font-weight: 500;
+                font-size: 0.9rem;
+                color: $branco-transparent-90;
+            }
+        }
+
+        .album{
+            &:hover{
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .w{
+        @for $i from 1 to 25 {
+            $width: $i * 2;
+            &-#{$width}{
+                width: #{$width * 1%};
+            }
+        }
+    }
+    
+}
